@@ -25,12 +25,12 @@ is_student <- TRUE
 integer <- 42         # Integer
 float <- 3.14         # Numeric (double)
 text <- "Hola, R"     # Character
-logical <- TRUE       # Logical (Boolean)
+logical <- FALSE       # Logical (Boolean)
 
 # 6. Logical Operations
 x <- 5
 y <- 10
-greater <- x > y
+greater <- (x > y)
 less <- x < y
 equal <- x == y
 different <- x != y
@@ -38,7 +38,7 @@ different <- x != y
 print(greater)
 
 # 7. Conditional if-else
-age <- 18
+age <- 12
 if (age >= 18) {
   print("You are of legal age 😎")
 } else {
@@ -57,9 +57,9 @@ for (i in 1:10) {
 #### Importing Data ####
 
 # Import a CSV file
-datos <- read.csv("medals_total.csv")
+dataset <- read.csv("Session_01/medals_total.csv")
 
-head(datos)
+head(dataset)
 
 # Summary of Data
-summary(datos)
+summary(dataset)

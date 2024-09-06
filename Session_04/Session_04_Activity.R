@@ -1,3 +1,4 @@
+#### Supervised and Unsupervised Methods ####
 # Load Packages
 # install.packages("tidyverse")
 library(tidyverse)
@@ -6,6 +7,21 @@ library(tidyverse)
 
 data(iris)  # Load Data
 head(iris)  # Show first rows of dataset
+
+#### Data Exploration ####
+library(ggplot2)
+
+# Bar Plot
+ggplot(iris, aes(x = Species)) +
+  geom_bar(fill = "lightblue", color = "black") +
+  labs(title = "Distribution of species", x = "Species", y = "Quantity")
+
+# Scatter Plot
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) +
+  geom_point(size = 3) +
+  labs(title = "Relationship between petal length and width", x = "Petal Length", y = "Petal Width")
+
+#### Building Models ####
 
 # Supervised Method
 
@@ -21,6 +37,7 @@ print(supervised_model)
 # Prediction
 predicciones <- predict(supervised_model, iris, type = "class")
 head(predicciones)  # Show the first predictions
+
 
 # NonSupervised Method
 
