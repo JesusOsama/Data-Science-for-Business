@@ -27,16 +27,16 @@ print(message)
 
 # Evaluate if student pass the exam
 if (right_score >= 60) {
-  resultado <- "Pass ✅"
+  result <- "Pass ✅"
 } else {
-  resultado <- "Fail ❌"
+  result <- "Fail ❌"
 }
 
-print(paste(name_student," : ",resultado))
+print(paste(name_student," : ",result))
 
 # All Students
 SCORES <- c(85, 90, 58, 77, 92)
-
+NAMES <- c("Cemre", "Antony", "Vasilisa", "Nikhil", "Jesus")
 # Counter
 counter_passed <- 0
 

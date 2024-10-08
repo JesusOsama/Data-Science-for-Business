@@ -13,7 +13,7 @@ cat("Other way to print")
 6 * 2   # Multiplication
 15 / 3  # Division
 2^3     # Power
-16 %% 3 # Module (rest of division)
+2 %% 3 # Module (rest of division)
 
 # 4. Variables
 x <- 10        # Arrow
@@ -24,24 +24,25 @@ is_student <- TRUE
 # 5. Types of variables
 integer <- 42         # Integer
 float <- 3.14         # Numeric (double)
-text <- "Hola, R"     # Character
+text <- "Hello, R"     # Character
 logical <- FALSE       # Logical (Boolean)
 
 # 6. Logical Operations
 x <- 5
 y <- 10
-greater <- (x > y)
-less <- x < y
-equal <- x == y
-different <- x != y
+greater <- (x > y) # 5 > 10 
+less <- x < y # 5 < 10
+equal <- x == y # 5 == 10 
+different <- x != y # 5 is different to 10 
 
-print(greater)
+print(different)
 
 # 7. Conditional if-else
-age <- 12
-if (age >= 18) {
+age <- 20
+
+if(age >= 18){
   print("You are of legal age 😎")
-} else {
+}else{
   print("You are not of legal age ❌")
 }
 
@@ -54,10 +55,17 @@ for (i in 1:10) {
   print(paste("Number:", i))
 }
 
-#### Importing Data ####
+for (i in 1:4){
+  print("*")
+}
 
+# *
+# **
+# ***
+# ****
+#### Importing Data ####
 # Import a CSV file
-dataset <- read.csv("Session_01/medals_total.csv")
+dataset <- read.csv("Course_01/Session_01/medals_total.csv")
 
 head(dataset)
 

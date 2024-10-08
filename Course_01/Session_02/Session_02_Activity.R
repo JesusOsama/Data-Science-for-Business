@@ -3,31 +3,30 @@
 # Vectors are a uni dimensional collection of elements which are of the same type
 
 # Numeric Vector
-numbers <- c(1, 2, 3, 4, 5)
+numbers <- c(1, 2, 15, 4, 5, 6, 10, 10000, 99)
 print(numbers)
 
 # Character Vector
-fruits <- c("apple", "banana", "grapes")
+fruits <- c("apple", "banana", "grapes", "pineapple")
 print(fruits)
 
 # Logic Vector
-logico <- c(TRUE, FALSE, TRUE, TRUE)
-print(logico)
+logic <- c(TRUE, FALSE, TRUE, TRUE)
+print(logic)
 
 # How to access to specific elements
-print(numeros[3])  # Third elements
-print(frutas[1:2])  # Two First elements
+print(numbers[7])  # Third elements
+print(fruits[2:4])  # Two First elements
 
 
 # 2. Matrix
 # Bi dimensional Collections of elements
-
 # Create a Matrix
-matrix <- matrix(1:9, nrow = 3, ncol = 3)
-print(matrix)
+matrix_example <- matrix(1:9, nrow = 3, ncol = 3)
+print(matrix_example)
 
 # Access to elements 
-print(matriz[2, 3])  # Row 2, column 3
+print(matrix_example[2, 2])  # Row 2, column 3
 
 # 3. List 
 # Lists can contain elements of different types
@@ -40,24 +39,26 @@ my_list <- list(
 )
 print(my_list)
 
-# Access to elemento of a list
-print(my_list$name)
-print(my_list[[2]])
+# Access to element of a list
+print(my_list$scores) # the most common
 print(my_list[["scores"]])
+
+print(my_list[[1]])
+print(my_list[["name"]])
 
 # 5. Data Frames
 # Data frames are tables used to make Data Science analysis
 
 df <- data.frame(
-  name = c("Ana", "Carlos", "María", "Pedro"),
-  age = c(22, 28, 25, 30),
-  city = c("Madrid", "Barcelona", "Sevilla", "Valencia")
+  name = c("Ana", "Carlos", "María", "Pedro", "Jesus"),
+  age = c(22, 28, 25, 30, 22),
+  city = c("Madrid", "Barcelona", "Sevilla", "Valencia", "Pasco")
 )
 print(df)
 
 # Access to columns
-print(df$nombre)
-print(df[["edad"]])
+print(df$city)
+print(df[["city"]])
 
 # Access to Rows
 print(df[2, ])  # Second Row
@@ -66,6 +67,9 @@ print(df[1:3, ])  # First three rows
 # Filter a data frame
 older_25 <- df[df$age > 25, ]
 print(older_25)
+
+df_madrid <- df[df$city == "Madrid", ]
+print(df_madrid)
 
 #### R Packages ####
 
