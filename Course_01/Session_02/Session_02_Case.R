@@ -7,17 +7,21 @@ library(lubridate)
 library(ggplot2)
 
 # 2. Create sample data (data structure: data frame)
-set.seed(123)
+set.seed(2024) # you can access to the same data all time
+
 sales <- data.frame(
-  date = seq(as.Date("2023-01-01"), as.Date("2023-12-31"), by = "day"),
+  date = seq(as.Date("2023-01-01"), as.Date("2023-12-31"), by = "day"), # 365 days
   product = sample(c("A", "B", "C"), 365, replace = TRUE),
   quantity = sample(1:10, 365, replace = TRUE),
   unit_price = runif(365, 10, 100)
 )
 
+head(sales)
+
 # 3. Function to calculate total sales
 calculate_total <- function(quantity, price) {
-  return(quantity * price)
+  result <- quantity * price
+  return(result)
 }
 
 # 4. Add total sales column using our function

@@ -76,8 +76,9 @@ print(df_madrid)
 # 1. Installation of packages
 # Use install.packages() 
 install.packages("dplyr")
-install.packages("ggplot2")
 install.packages(c("tidyr", "readr", "lubridate"))
+
+install.packages("ggplot2")
 
 # 2. Load packages
 # Use library() to load a package
@@ -91,7 +92,7 @@ installed.packages()
 search()
 
 # 5. Documentation of a Package
-help(package = "dplyr")
+help(package = "ggplot2")
 
 # 6. Version of a package
 packageVersion("dplyr")
@@ -102,10 +103,10 @@ packageVersion("dplyr")
 # R has many built-in functions
 
 # Mathematical function
-print(sqrt(25))
+print(sqrt(30))
 
 # Statistical function
-print(mean(c(1, 2, 3, 4, 5)))
+print(mean(c(1, 2, 3, 4, 5, 60)))
 
 
 # 2. Create Functions
@@ -113,7 +114,7 @@ hello <- function(name) {
   paste("Hello,", name, "!")
 }
 
-print(hello("Sofia"))
+print(hello("Atharv"))
 
 # 3. Functions with multiple parameters
 ibm <- function(weight, height) {
@@ -136,4 +137,4 @@ grade <- function(score) {
   }
 }
 
-print(grade(85))
+print(grade(60))
