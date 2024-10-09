@@ -5,11 +5,10 @@
 # R has many built-in functions
 
 # Mathematical function
-print(sqrt(25))
+print(sqrt(36))
 
 # Statistical function
-print(mean(c(1, 2, 3, 4, 5)))
-
+print(mean(c(1, 2, 3, 4, 5, 60)))
 
 # 2. Create Functions
 hello <- function(name) {
@@ -17,11 +16,16 @@ hello <- function(name) {
 }
 
 print(hello("Sofia"))
+print(hello("Antony"))
+print(hello("Nikhil"))
+print(hello("Sarthak"))
+print(hello("Vasilisa"))
+print(hello("Jesus"))
 
 # 3. Functions with multiple parameters
 ibm <- function(weight, height) {
-  ibm <- weight / (height^2)
-  return(ibm)
+  ibm_2 <- weight / (height^2)
+  return(ibm_2)
 }
 
 print(ibm(70, 1.75))
@@ -39,7 +43,8 @@ grade <- function(score) {
   }
 }
 
-print(grade(85))
+print(grade(50))
+
 #### Data Visualization ####
 
 # First, install and load ggplot2 if you haven't already
