@@ -1,3 +1,4 @@
+#### Name: Jesus Verastegui
 
 #### R Functions ####
 
@@ -53,6 +54,7 @@ library(ggplot2)
 
 # Use the built-in 'mpg' data set for these examples
 data(mpg)
+head(mpg)
 
 # 1. Basic scatter plot
 ggplot(mpg, aes(x = displ, y = hwy)) +
