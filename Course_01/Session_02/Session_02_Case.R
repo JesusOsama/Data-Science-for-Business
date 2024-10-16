@@ -27,6 +27,7 @@ calculate_total <- function(quantity, price) {
 # 4. Add total sales column using our function
 sales$total <- mapply(calculate_total, sales$quantity, sales$unit_price)
 
+head(sales)
 # 5. Function to categorize sales
 categorize_sale <- function(total) {
   if (total < 100) {
@@ -40,6 +41,8 @@ categorize_sale <- function(total) {
 
 # 6. Apply the categorization function
 sales$category <- sapply(sales$total, categorize_sale)
+
+tail(sales)
 
 # 7. Basic analysis using dplyr
 monthly_summary <- sales %>%
