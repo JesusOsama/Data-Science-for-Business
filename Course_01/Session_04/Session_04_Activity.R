@@ -7,6 +7,7 @@ library(tidyverse)
 
 data(iris)  # Load Data
 head(iris)  # Show first rows of dataset
+tail(iris)
 
 #### Data Exploration ####
 library(ggplot2)
@@ -25,7 +26,7 @@ ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) +
 
 # Supervised Method
 
-# install.packages("rpart")
+#install.packages("rpart")
 library(rpart)
 
 # Model = Recursive Partitioning and Regression Trees
@@ -35,13 +36,13 @@ supervised_model <- rpart(Species ~ Sepal.Length + Sepal.Width + Petal.Length + 
 print(supervised_model)
 
 # Prediction
-predicciones <- predict(supervised_model, iris, type = "class")
-head(predicciones)  # Show the first predictions
-
+prediccions <- predict(supervised_model, iris, type = "class")
+head(prediccions)  # Show the first predictions
+tail(prediccions)
 
 # NonSupervised Method
 
-# install.packages("cluster")
+install.packages("cluster")
 library(cluster)
 
 # Kmeans
@@ -53,6 +54,7 @@ table(clustering$cluster)  # Number of points in every cluster
 
 # Add a column 
 iris$Cluster <- as.factor(clustering$cluster)
+head(iris)
 
 # Plot the clusters
 ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Cluster)) +

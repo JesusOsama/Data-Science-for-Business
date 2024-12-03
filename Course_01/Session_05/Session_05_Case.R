@@ -2,9 +2,10 @@ library(ggplot2)
 library(dplyr)
 library(broom)
 library(ggpubr)
+
 # Load the data into R
 # Read Dataset
-income.data <- read.csv("Session_05/income.data.csv")
+income.data <- read.csv("Course_01/Session_05/income.data.csv")
 summary(income.data)
 head(income.data)
 

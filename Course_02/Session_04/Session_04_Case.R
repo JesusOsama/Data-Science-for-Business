@@ -9,6 +9,9 @@ min_mpg <- min(mtcars$mpg)  # Minimum value of mpg
 max_mpg <- max(mtcars$mpg)  # Maximum value of mpg
 range_mpg <- range(mtcars$mpg)  # Range of mpg values
 
+summary(mtcars)
+
+
 # Display summary statistics
 cat("Mean MPG:", mean_mpg, "\n")
 cat("Median MPG:", median_mpg, "\n")
@@ -51,4 +54,3 @@ cat("Correlation between MPG and Horsepower:", correlation_mpg_hp, "\n")
 summary_stats <- summary(mtcars)
 cat("Summary of mtcars dataset:\n")
 print(summary_stats)
-

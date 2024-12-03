@@ -25,12 +25,17 @@ logistic_model <- glm(Species ~ Petal.Length + Petal.Width, data = iris_filtered
 
 # Results of the model
 summary(logistic_model)
+#             Estimate Std. Error z value Pr(>|z|)
+#(Intercept)     -72.73   70289.28  -0.001    0.999
+#Petal.Length     18.37   74002.45   0.000    1.000
+#Petal.Width      35.76  199094.68   0.000    1.000
 
 # Predictions with the model
 logistical_predictions <- predict(logistic_model, type = "response")
+logistical_predictions
 
 # Convert probabilities into labels (0 or 1) using a threshold of 0.5
-predictions_classification <- ifelse(logistical_predictions > 0.5, 1, 0)
+predictions_classification <- ifelse(logistical_predictions >= 0.5, 1, 0)
 
 # See the first predictions
 head(predictions_classification)
@@ -45,7 +50,6 @@ ggplot(iris_filtered, aes(x = Petal.Length, y = Petal.Width,
   scale_color_manual(values = c("blue", "red"), 
                      name = "Specie", 
                      labels = c("Setosa", "Versicolor"))
-
 
 #### Regression Model ####
 # Linear Regression

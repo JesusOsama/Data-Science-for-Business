@@ -1,7 +1,7 @@
 library(tidyverse)
 
 
-breastCancer <- read.csv("Session_06/Breast_cancer_data.csv")
+breastCancer <- read.csv("Course_01/Session_06/Breast_cancer_data.csv")
 
 set.seed(1234)
 breastCancer <- breastCancer[sample(nrow(breastCancer)), ]

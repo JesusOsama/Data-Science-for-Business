@@ -6,6 +6,8 @@ library(ggplot2)
 # Load the mtcars dataset
 data(mtcars)
 
+summary(mtcars)
+
 # Create a new binary column: 1 if mpg is greater than 20, 0 otherwise
 mtcars$high_mpg <- ifelse(mtcars$mpg > 20, 1, 0)
 
@@ -26,7 +28,7 @@ logistic_probabilities_mtcars <- predict(logistic_model_mtcars, type = "response
 head(logistic_probabilities_mtcars)
 
 # Convert probabilities into class predictions (0 or 1) using a threshold of 0.5
-logistic_class_predictions <- ifelse(logistic_probabilities_mtcars > 0.5, 1, 0)
+logistic_class_predictions <- ifelse(logistic_probabilities_mtcars >= 0.5, 1, 0)
 
 # Compare predictions with actual classes
 table(Predictions = logistic_class_predictions, Actual = mtcars$high_mpg)
