@@ -38,7 +38,7 @@ logistical_predictions
 predictions_classification <- ifelse(logistical_predictions >= 0.5, 1, 0)
 
 # See the first predictions
-head(predictions_classification)
+predictions_classification
 
 # Clasification Plot
 ggplot(iris_filtered, aes(x = Petal.Length, y = Petal.Width, 
@@ -61,7 +61,7 @@ summary(regression_model)
 
 # Making predictions with the regression model
 regression_predictions <- predict(regression_model)
-
+regression_predictions
 # Regression Plot
 ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) +
   geom_point(color = "blue", size = 3) +  # Puntos originales

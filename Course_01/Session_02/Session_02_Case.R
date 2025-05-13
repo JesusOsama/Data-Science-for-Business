@@ -7,7 +7,7 @@ library(lubridate)
 library(ggplot2)
 
 # 2. Create sample data (data structure: data frame)
-set.seed(2024) # you can access to the same data all time
+set.seed(2025) # you can access to the same data all time
 
 sales <- data.frame(
   date = seq(as.Date("2023-01-01"), as.Date("2023-12-31"), by = "day"), # 365 days
@@ -17,6 +17,7 @@ sales <- data.frame(
 )
 
 head(sales)
+tail(sales)
 
 # 3. Function to calculate total sales
 calculate_total <- function(quantity, price) {
@@ -28,6 +29,7 @@ calculate_total <- function(quantity, price) {
 sales$total <- mapply(calculate_total, sales$quantity, sales$unit_price)
 
 head(sales)
+
 # 5. Function to categorize sales
 categorize_sale <- function(total) {
   if (total < 100) {

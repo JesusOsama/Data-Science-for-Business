@@ -16,7 +16,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
   geom_point()
 
 # 3. Line plot with smoothing
-ggplot(mpg, aes(x = displ, y = hwy)) +
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
   geom_point() +
   geom_smooth(method = "lm")
 
