@@ -7,7 +7,7 @@ library(caret)
 # TODO: Load the 'bank.csv' dataset using read.csv and assign it to 'bank_data'
 # Hint: The file uses ';' as separator
 
-# bank_data <- ...
+bank_data <- read.csv("Course_01/Test_01/bank.csv", sep = ";")
 
 # 2. Data Exploration
 # View structure and summary
@@ -34,8 +34,9 @@ ggplot(bank_data, aes(x = y)) +
 
 # TODO: Plot a histogram of 'age' by subscription status
 # Hint: Use fill = y, binwidth = 5, position = "dodge"
-
-# ggplot(...) + ...
+ggplot(bank_data, aes(x = age, fill = y)) + 
+  geom_histogram(binwidth = 5, position = "dodge") +
+  labs(title = "Age Distribution by Subscription Status", x = "Age", y = "Count")
 
 # 5. Train/Test Split
 set.seed(123)
@@ -45,22 +46,26 @@ test_data <- bank_data[-train_index, ]
 
 # 6. Model Training
 # TODO: Train a logistic regression model on train_data
-# model <- ...
+model <- glm(y ~ ., data = train_data, family = binomial)
+summary(model)
 
 # 7. Prediction
 # TODO: Use the model to predict probabilities on test_data
-# pred_probs <- ...
 
+pred_probs <- predict(model, newdata = test_data, type="response")
+pred_probs
 # TODO: Convert probabilities to class labels
-# predictions <- ifelse(...)
+
+predictions <- ifelse(pred_probs > 0.5, "yes", "no")
+predictions
 
 # Convert to factor
-# predictions <- factor(predictions, levels = c("no", "yes"))
+predictions <- factor(predictions, levels = c("no", "yes"))
 
 # 8. Evaluation
 # TODO: Use confusionMatrix to evaluate predictions
-# confusionMatrix(...)
+confusionMatrix(predictions, test_data$y)
 
 # TODO: Calculate and print accuracy
-# accuracy <- ...
-# print(paste("Accuracy:", round(accuracy, 2)))
+accuracy <- mean(predictions == test_data$y)
+print(paste("Accuracy:", round(accuracy, 2)))
